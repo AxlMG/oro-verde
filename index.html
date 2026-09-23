@@ -114,15 +114,15 @@ svg text{font-family:Poppins,Arial,sans-serif}
 <!-- ================= CONSULTORA ================= -->
 <section class="view" id="v-c">
   <div class="kpis">
-    <div class="card kpi"><div class="v">$20.63</div><div class="l">precio al productor por kg, promedio nacional 2024 (SIAP)</div></div>
-    <div class="card kpi"><div class="v">$65.50</div><div class="l">precio de mayoreo por kg, 2024 (SNIIM)</div></div>
-    <div class="card kpi hi"><div class="v">31.5%</div><div class="l">del precio de mayoreo llega al productor</div></div>
+    <div class="card kpi"><div class="v">$21.34</div><div class="l">precio al productor por kg, promedio nacional 2025 (SIAP)</div></div>
+    <div class="card kpi"><div class="v">$65.78</div><div class="l">precio de mayoreo por kg, 2025 (SNIIM)</div></div>
+    <div class="card kpi hi"><div class="v">32.4%</div><div class="l">del precio de mayoreo llega al productor</div></div>
   </div>
 
   <div class="grid">
     <div class="card">
       <h2>Precio de mayoreo a lo largo del año</h2>
-      <p class="sub">Pesos por kg, promedio mensual SNIIM. La franja amarilla es hoy.</p>
+      <p class="sub">Pesos por kg, promedio mensual SNIIM por año. El mes pico cambia: julio en 2023 y 2024, mayo en 2025. La franja amarilla es hoy.</p>
       <svg id="chart" viewBox="0 0 620 260" width="100%" role="img" aria-label="Precio de mayoreo por mes"></svg>
     </div>
     <div class="card">
@@ -134,26 +134,26 @@ svg text{font-family:Poppins,Arial,sans-serif}
 
     <div class="card">
       <h2>Brecha por estado</h2>
-      <p class="sub">Precio al productor contra mayoreo, pesos por kg, 2024</p>
+      <p class="sub">Precio al productor contra mayoreo, pesos por kg, 2025</p>
       <div class="bars">
-        <div class="bar-row"><span>Michoacán</span><div class="track"><div class="fill" style="width:31.3%;background:var(--sage)"></div></div><span>$20.47</span></div>
-        <div class="bar-row"><span>Jalisco</span><div class="track"><div class="fill" style="width:38%;background:var(--sage)"></div></div><span>$24.92</span></div>
-        <div class="bar-row"><span>Mayoreo</span><div class="track"><div class="fill" style="width:100%;background:var(--sun)"></div></div><span>$65.50</span></div>
+        <div class="bar-row"><span>Michoacán</span><div class="track"><div class="fill" style="width:33%;background:var(--sage)"></div></div><span>$21.74</span></div>
+        <div class="bar-row"><span>Jalisco</span><div class="track"><div class="fill" style="width:37.1%;background:var(--sage)"></div></div><span>$24.42</span></div>
+        <div class="bar-row"><span>Mayoreo</span><div class="track"><div class="fill" style="width:100%;background:var(--sun)"></div></div><span>$65.78</span></div>
       </div>
     </div>
 
     <div class="card sim">
       <h2>Simulador de certificación, Jalisco</h2>
-      <p class="sub">28,409 ha sembradas; 8,420 ha certificadas para exportar</p>
+      <p class="sub">31,629 ha sembradas (2025); 8,420 ha certificadas para exportar</p>
       <label for="ha">Hectáreas certificadas: <b id="haTxt">8,420</b></label>
-      <input id="ha" type="range" min="8420" max="28409" step="100" value="8420">
+      <input id="ha" type="range" min="8420" max="31629" step="100" value="8420">
       <label for="dif">Diferencia exportación vs nacional por kg*: $<input id="dif" type="number" value="5" min="0" step="1"></label>
-      <div style="margin-top:14px"><span class="big" id="pct">29.6%</span> <span class="note">de la superficie puede exportar</span></div>
+      <div style="margin-top:14px"><span class="big" id="pct">26.6%</span> <span class="note">de la superficie puede exportar</span></div>
       <div style="margin-top:6px"><span class="big" id="val">$0</span> <span class="note">de valor adicional al año</span></div>
     </div>
   </div>
 
-  <p class="foot">Fuentes: SIAP cierre agrícola 2024, SNIIM precios de mayoreo, APEAM/SENASICA (superficie certificada), rendimiento de 11.93 t/ha para Jalisco 2024. La brecha es direccional: SIAP mezcla variedades y SNIIM reporta solo hass. El semáforo y la diferencia de precio de exportación son de ejemplo hasta tener precio en huerta mensual.</p>
+  <p class="foot">Fuentes: SIAP cierre agrícola 2025, SNIIM precios de mayoreo 2023–2025 (sin 2022, que cubre un solo mercado), APEAM/SENASICA 2022 (superficie certificada), rendimiento de 12.07 t/ha para Jalisco 2025. La brecha es direccional: SIAP mezcla variedades y SNIIM reporta solo hass. El semáforo y la diferencia de precio de exportación son de ejemplo hasta tener precio en huerta mensual.</p>
 </section>
 </main>
 
@@ -168,7 +168,7 @@ document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{
 const msgs=document.getElementById('msgs'), chips=document.getElementById('chips');
 const say=(who,html)=>{const d=document.createElement('div');d.className='m '+who;d.innerHTML=html;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight};
 const flows={
-  vender:{q:'¿Me conviene vender esta semana?',a:'🟢 <b>Sí, es buen momento.</b> El mayoreo tocó su punto alto en julio (~$76/kg) y suele bajar hasta diciembre (~$53/kg). Esperar probablemente te pague menos.<div class="src">Fuente: SNIIM, promedio mensual de mayoreo <span class="conf">confianza media</span><br>Aún no tenemos precio en huerta por mes.</div>'},
+  vender:{q:'¿Me conviene vender esta semana?',a:'🟢 <b>Sí, es buen momento.</b> El pico del mayoreo ya pasó: fue en julio en 2023 y 2024, y en mayo en 2025. De septiembre a diciembre suele bajar (hasta ~$47/kg en 2023 y 2025). Esperar probablemente te pague menos.<div class="src">Fuente: SNIIM, mayoreo mensual 2023–2025 <span class="conf">confianza media</span><br>Aún no tenemos precio en huerta por mes.</div>'},
   reportar:{q:'Quiero reportar mi precio',a:'¿Cuánto te pagaron por kilo y de qué calibre?',next:{q:'$24 el kilo, calibre 48',a:'Gracias. Esta semana en tu región los productores reportan <b>$21 a $26/kg</b>* para ese calibre. Tu precio está en la parte alta.<div class="src">Fuente: 38 reportes anónimos de productores* <span class="conf">confianza baja</span></div>'}},
   clima:{q:'¿Hay alerta de clima?',a:'⚠️ <b>Calor extremo:</b> se esperan 3 días arriba de 33 °C en Uruapan la próxima semana*. Puede bajar el calibre de la fruta que sigue en el árbol.<div class="src">Fuente: pronóstico Open-Meteo</div>'}
 };
@@ -185,14 +185,26 @@ function run(f){
 say('bot','Hola 👋 Soy el asistente de Oro Verde. ¿Qué quieres saber?');menu();
 
 // ---------- chart ----------
-const pts=[[1,51.9],[3,52.6],[5,61.8],[7,75.9],[9,66.5],[12,52.7]];
-const X=m=>50+(m-1)*50, Y=v=>220-(v-45)*5.6;
+const series=[
+  ['2023','var(--mute)',[43.50,41.44,43.23,46.31,47.15,50.64,66.75,65.91,61.10,55.18,50.28,46.93]],
+  ['2024','var(--sun)',[46.48,null,45.35,52.85,57.55,70.44,85.33,83.53,78.53,70.76,65.17,64.54]],
+  ['2025','var(--sage)',[65.89,66.36,70.30,74.86,80.95,79.51,75.50,69.89,60.34,50.76,48.41,46.93]]
+];
+const X=m=>50+(m-1)*50, Y=v=>220-(v-38)*4.1;
 const mes=['E','F','M','A','M','J','J','A','S','O','N','D'];
-let s='<rect x="'+(X(9)-18)+'" y="20" width="36" height="200" fill="var(--sun)" opacity=".35" rx="8"/>';
-[50,60,70,80].forEach(v=>s+=`<line x1="40" x2="610" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)"/><text x="10" y="${Y(v)+4}" font-size="11" fill="var(--mute)">$${v}</text>`);
+let s='<rect x="'+(X(9)-18)+'" y="20" width="36" height="200" fill="var(--sun)" opacity=".25" rx="8"/>';
+[40,50,60,70,80].forEach(v=>s+=`<line x1="40" x2="610" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)"/><text x="6" y="${Y(v)+4}" font-size="11" fill="var(--mute)">$${v}</text>`);
 mes.forEach((m,i)=>s+=`<text x="${X(i+1)}" y="245" font-size="12" text-anchor="middle" fill="var(--mute)">${m}</text>`);
-s+=`<polyline points="${pts.map(p=>X(p[0])+','+Y(p[1])).join(' ')}" fill="none" stroke="var(--sage)" stroke-width="3" stroke-linejoin="round"/>`;
-pts.forEach(p=>s+=`<circle cx="${X(p[0])}" cy="${Y(p[1])}" r="5" fill="var(--sage)"/><text x="${X(p[0])}" y="${Y(p[1])-12}" font-size="11" text-anchor="middle" fill="var(--ink)">${p[1]}</text>`);
+series.forEach(([anio,col,vals],k)=>{
+  // se corta la linea donde falta el mes (febrero 2024 no existe en SNIIM)
+  let seg=[],segs=[];
+  vals.forEach((v,i)=>{if(v==null){if(seg.length)segs.push(seg);seg=[]}else seg.push([i+1,v])});
+  if(seg.length)segs.push(seg);
+  segs.forEach(g=>s+=`<polyline points="${g.map(p=>X(p[0])+','+Y(p[1])).join(' ')}" fill="none" stroke="${col}" stroke-width="3" stroke-linejoin="round"/>`);
+  const mx=vals.reduce((a,v,i)=>v!=null&&v>vals[a]?i:a,0);
+  s+=`<circle cx="${X(mx+1)}" cy="${Y(vals[mx])}" r="5" fill="${col}"/><text x="${X(mx+1)}" y="${Y(vals[mx])-10}" font-size="11" text-anchor="middle" fill="var(--ink)">${anio}: $${vals[mx].toFixed(0)}</text>`;
+  s+=`<rect x="${430+k*60}" y="4" width="12" height="12" rx="3" fill="${col}"/><text x="${446+k*60}" y="14" font-size="11" fill="var(--ink)">${anio}</text>`;
+});
 document.getElementById('chart').innerHTML=s;
 
 // ---------- semáforo ----------
@@ -204,8 +216,8 @@ const ha=document.getElementById('ha'),dif=document.getElementById('dif');
 function sim(){
   const h=+ha.value, extra=h-8420, d=+dif.value||0;
   document.getElementById('haTxt').textContent=h.toLocaleString('es-MX');
-  document.getElementById('pct').textContent=(h/28409*100).toFixed(1)+'%';
-  document.getElementById('val').textContent='$'+Math.round(extra*11.93*1000*d/1e6).toLocaleString('es-MX')+' M';
+  document.getElementById('pct').textContent=(h/31629*100).toFixed(1)+'%';
+  document.getElementById('val').textContent='$'+Math.round(extra*12.07*1000*d/1e6).toLocaleString('es-MX')+' M';
 }
 ha.oninput=sim;dif.oninput=sim;sim();
 </script>
